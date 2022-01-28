@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
-import { userloginDTO } from '../model/userloginDTO';
+import { UserLoginDTO } from '../model/UserLoginDTO';
 import { AuthService } from '../service/auth.service';
 
 @Component({
@@ -11,7 +11,7 @@ import { AuthService } from '../service/auth.service';
 })
 export class EntrarComponent implements OnInit {
 
-  userloginDTO: userloginDTO = new userloginDTO()
+  userloginDTO: UserLoginDTO = new UserLoginDTO()
 
   constructor(
     private auth: AuthService,
@@ -23,7 +23,7 @@ export class EntrarComponent implements OnInit {
   }
 
   entrar() {
-    this.auth.entrar(this.userloginDTO).subscribe((resp:userloginDTO) => {
+    this.auth.entrar(this.userloginDTO).subscribe((resp:UserLoginDTO) => {
       this.userloginDTO = resp
 
       environment.token = this.userloginDTO.token

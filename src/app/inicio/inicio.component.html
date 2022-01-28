@@ -12,7 +12,7 @@
   
         <div class="row d-flex justify-content-center mt-3 mb-5">
           <div class="col-md-6">
-            <button class="btn btn-light me-2" data-toggle="modal" data-target="#novaPostagem">Nova Postagem</button>
+            <button type="button" class="btn btn-light me-2" data-bs-toggle="modal" data-bs-target="#novaPostagem">Nova Postagem</button>
             <a class="btn btn-outline-light" href="#postagens">Ver Postagens</a>
           </div>
         </div>
@@ -46,5 +46,41 @@
       
           </div>
         </nav>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="novaPostagem" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Nova Postagem</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body">
+              <div class="form-group">
+                  <label for="titulo">Título</label>
+                  <input type="text" class="form-control" id="titulo" placeholder="Digite o título">
+              </div>
+
+              <div class="form-group mt-3">
+                  <label for="titulo">Texto</label>
+                  <textarea class="form-control" name=""texto id="texto" rows="3" ></textarea>
+              </div>
+
+              <div class="form-group mt-3">
+                  <label for="titulo">Escolha um tema ou <a data-bs-dismiss="modal" data-bs-target="#my-modal" routerLink="/tema">cadastre um novo</a>: </label>
+                  <select class="form-control" name="tema" id="tema">
+                      <option value="">Temas</option>
+                  </select>
+              </div>
+          </div>
+          <div class="modal-footer mt-3">
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close">Cancelar</button>
+              <button type="button" class="btn btn-success">Publicar</button>
+          </div>
+      </div>
   </div>
 </div>

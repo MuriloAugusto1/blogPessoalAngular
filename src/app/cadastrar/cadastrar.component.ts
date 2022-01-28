@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { user } from '../model/user';
+import { UsuarioModel } from '../model/UsuarioModel';
 import { AuthService } from '../service/auth.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { AuthService } from '../service/auth.service';
 })
 export class CadastrarComponent implements OnInit {
 
-  user: user = new user
+  user: UsuarioModel = new UsuarioModel
   confirmarSenha: string
   tipoUsuario: string
 
@@ -37,7 +37,7 @@ export class CadastrarComponent implements OnInit {
     if(this.user.senha != this.confirmarSenha) {
       alert("As senhas estão incorretas")
     } else {
-      this.authService.cadastrar(this.user).subscribe((resp: user) => {
+      this.authService.cadastrar(this.user).subscribe((resp: UsuarioModel) => {
         this.user = resp
         this.router.navigate(["/entrar"])
         alert("Usuário cadastrado com sucesso")
